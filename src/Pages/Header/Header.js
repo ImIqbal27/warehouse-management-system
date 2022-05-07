@@ -8,19 +8,21 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
 
-            <h2 className='warehouse'>WareHouse</h2>
+            <h2 className='warehouse'>
+              WareHouse
+            </h2>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#products">Products</Nav.Link>
-                <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
-              
+              <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
 
-{/*               
+
+              {/*               
               <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -31,11 +33,9 @@ const Header = () => {
             </Nav>
             <Nav>
               <Nav.Link href="#deets">More deets</Nav.Link>
-             
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
-            
+
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>
