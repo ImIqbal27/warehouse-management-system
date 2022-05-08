@@ -1,0 +1,32 @@
+[
+    {
+        "id": "10001",
+        "name": "Yamaha",
+        "img": "https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    },
+    {
+        "id": "10002",
+        "name": "Suzuki",
+        "img": "https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    },
+    {
+        "id": "10003",
+        "name": "Honda",
+        "img": "https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    },
+    {
+        "id": "10004",
+        "name": "BMW",
+        "img": "https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    },
+    {
+        "id": "10005",
+        "name": "Kawasaki",
+        "img": "https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    },
+    {
+        "id": "10006",
+        "name": "Hero Honda",
+        "img": " https://thumbs.dreamstime.com/b/motorcycle-28689241.jpg"
+    }
+]

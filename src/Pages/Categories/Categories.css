@@ -1,0 +1,8 @@
+.categories-section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 15px;
+
+}
