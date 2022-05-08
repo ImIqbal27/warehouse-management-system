@@ -1,12 +1,15 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import loginImg from '../../images/login-img.jpg';
+import './Login.css';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const navigate = useNavigate();
 
     const [
         signInWithEmailAndPassword,
@@ -14,16 +17,18 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password);
+        // console.log(email, password);
         signInWithEmailAndPassword(email, password);
-
-
+    }
+    if (user) {
+        navigate('/home');
     }
 
     const resetPassword = async () => {
@@ -40,7 +45,7 @@ const Login = () => {
     return (
         <div className='login-grid'>
             <div className='container w-50'>
-                <img src='' alt="" />
+                <img src={loginImg} alt="" />
             </div>
 
             <div className='container  w-50  '>
