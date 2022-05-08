@@ -5,11 +5,14 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../firebase.init';
 import loginImg from '../../images/login-img.jpg';
 import './Login.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+     let errorElement;
+
 
     const [
         signInWithEmailAndPassword,
@@ -29,6 +32,9 @@ const Login = () => {
     }
     if (user) {
         navigate('/home');
+    }
+    if (error) {
+        errorElement = <p className='text-danger'>{error.message}</p>
     }
 
     const resetPassword = async () => {
@@ -66,12 +72,14 @@ const Login = () => {
                         Login
                     </Button>
                 </Form>
-                {/* {errorElement} */}
+                {errorElement}
                 <p>New To Warehouse? <Link to='/register' className='text-primary text-decoration-none' > Register</Link></p>
                 <p>Forget Password ? <button t className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}> Reset Password</button></p>
+                <SocialLogin></SocialLogin>
 
 
             </div>
+           
 
         </div>
     );

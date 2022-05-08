@@ -5,9 +5,11 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import regImg from '../../images/reg.jpg';
 import './Register.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const navigate = useNavigate();
+    let errorElement;
     const [
         createUserWithEmailAndPassword,
         user,
@@ -24,8 +26,11 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password);
 
     }
-    if(user){
+    if (user) {
         navigate('/home')
+    }
+    if (error) {
+        errorElement = <p className='text-danger'>{error.message}</p>
     }
     return (
         <div className='reg-grid'>
@@ -61,10 +66,13 @@ const Register = () => {
                         Register
                     </Button>
                 </Form>
-             
+                {errorElement}
+
                 <p>Already have an account? <Link to='/login' className='text-primary text-decoration-none' > Login</Link></p>
+                <SocialLogin></SocialLogin>
 
             </div>
+
 
         </div>
     );
