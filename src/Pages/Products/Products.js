@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import './Products.css';
-//products.json
+//
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('')
+        fetch(`http://localhost:5000/products`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -17,7 +17,7 @@ const Products = () => {
 
             <div className='products-container'>
                 {
-                    products.slice(0, 4).map(product => <Product key={product.id}
+                    products.slice(0, 4).map(product => <Product key={product._id}
                         product={product}
                     ></Product>)
                 }

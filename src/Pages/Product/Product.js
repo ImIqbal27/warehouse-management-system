@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({ product }) => {
-    const { id, name, price, description, img, quantity } = product;
+    const { _id, name, price, description, img, quantity } = product;
     const navigate = useNavigate();
-    const navigateToManagePoduct = id => {
+    const navigateToManageProduct = id => {
         navigate(`/manageproduct/${id}`)
 
     }
@@ -25,7 +25,7 @@ const Product = ({ product }) => {
                     <p>Qty :{quantity}</p>
                 </Card.Body>
                 <button className='btn-update'
-                    onClick={() => navigateToManagePoduct(id)}>
+                    onClick={() => navigateToManageProduct(_id)}>
                     <Card.Footer>
                         <small className="text-muted">Update</small>
                     </Card.Footer>
