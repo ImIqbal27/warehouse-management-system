@@ -7,7 +7,7 @@ import NotFound from './Pages/404/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import ContactUs from './ContactUs/ContactUs';
+import ContactUs from './Pages/ContactUs/ContactUs';
 import ManageProduct from './Pages/ManageProduct/ManageProduct';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import AddProduct from './Pages/AddProduct/AddProduct';
@@ -24,7 +24,8 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contact' element={<ContactUs></ContactUs>}></Route>
 
-        <Route path='manageproduct/:productId' element={<ManageProduct></ManageProduct>}></Route>
+        <Route path='/manageproduct/:productId' element={<ManageProduct></ManageProduct>}></Route>
+        {/* <Route path='/'></Route> */}
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Category from '../../Category/Category';
+import Category from '../Category/Category';
 import './Categories.css';
 
 const Categories = () => {

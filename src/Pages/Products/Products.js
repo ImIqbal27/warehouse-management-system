@@ -17,10 +17,15 @@ const Products = () => {
 
             <div className='products-container'>
                 {
-                    products.slice(0, 4).map(product => <Product key={product._id}
+                    products.map(product => <Product key={product._id}
                         product={product}
                     ></Product>)
                 }
+                {/* {
+                    products.slice(0, 4).map(product => <Product key={product._id}
+                        product={product}
+                    ></Product>)
+                } */}
             </div>
         </div>
     );
