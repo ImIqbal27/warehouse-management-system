@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../hooks/useProducts';
 import Product from '../Product/Product';
 import './Products.css';
-//
-const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
 
+
+const Products = () => {
+    // const [products, setProducts] = useState([]);
+    // useEffect(() => {
+    //     fetch('https://nameless-reaches-24864.herokuapp.com/products')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, [])
+    const [products] = useProducts();
 
     return (
         <div >
@@ -17,7 +19,7 @@ const Products = () => {
 
             <div className='products-container'>
                 {
-                    products.map(product => <Product key={product._id}
+                    products.slice(0, 4).map(product => <Product key={product._id}
                         product={product}
                     ></Product>)
                 }

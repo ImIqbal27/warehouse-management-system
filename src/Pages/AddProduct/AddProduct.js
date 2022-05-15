@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddProduct = () => {
     const handleAddProduct = event => {
@@ -13,7 +14,7 @@ const AddProduct = () => {
 
         console.log(name, imageURL, description, price, quantity, supplier);
         const productAllPart = { name, imageURL, description, price, quantity, supplier };
-        const serverURL = `http://localhost:5000/product`;
+        const serverURL = `https://nameless-reaches-24864.herokuapp.com/product`;
 
         fetch(serverURL, {
             method: 'POST',
@@ -25,8 +26,13 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                // event.target.reset();
+                // toast('Product Added Successfully');
+                alert('Product Added Successfully');
 
-            })
+
+            });
+
 
     }
     return (
@@ -60,11 +66,14 @@ const AddProduct = () => {
 
 
                 <Button variant="primary" type="submit">
-                    Submit
+                    Add Product
                 </Button>
+
             </Form>
 
+
         </div>
+
     );
 };
 
