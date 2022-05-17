@@ -6,10 +6,11 @@ const Category = ({ category }) => {
 
 
     return (
-        <Card style={{ width: '12rem' }}>
+        <Card style={{ width: '12rem' }} className='mx-auto me-2'>
+            <Card.Title style={{ color: '#062C30' }}>{name}</Card.Title>
             <Card.Img variant="top" src={img} />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
+
                 {/* <Button variant="primary">Go</Button> */}
             </Card.Body>
         </Card>

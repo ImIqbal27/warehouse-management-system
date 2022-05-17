@@ -18,7 +18,6 @@ const ManageProduct = () => {
         const qty = product.quantity;
         const qtyToNumber = parseInt(qty);
         const newQtyNumber = qtyToNumber - 1;
-        console.log(newQtyNumber);
 
         const url = `https://nameless-reaches-24864.herokuapp.com/products/${productId}`;
         // const url = `http://localhost:5000//products/${productId}`;
@@ -35,8 +34,38 @@ const ManageProduct = () => {
                 alert('updated successfully');
 
             })
+    };
+    const handleRestock = event => {
+        event.preventDefault();
+        const quantityNumber = parseInt(product.quantity);
+        console.log(typeof (quantityNumber));
+        console.log('Qtyyyyyy  =', quantityNumber);
 
+        const restock = event.target.restock.value;
+        const restockNumber = parseInt(restock);
+        console.log('restockk= =', restockNumber)
+        console.log(typeof (restockNumber))
 
+        let updateRestock = quantityNumber + restockNumber;
+
+        console.log(typeof (updateRestock));
+        console.log("updattttt ==", updateRestock);
+
+        const url = `https://nameless-reaches-24864.herokuapp.com/products/${productId}`;
+
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ updateRestock })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('Restock successfully');
+
+            })
 
     }
 
@@ -60,9 +89,10 @@ const ManageProduct = () => {
 
             </div>
             <div>
-                <form action="">
-                    <input type="button" value="Restock" />
-                    <input type="text" name="restock" id="" />
+                <form onSubmit={handleRestock}>
+
+                    <input type="number" name="restock" id="" />
+                    <input type="submit" value="Restock" />
 
                 </form>
 

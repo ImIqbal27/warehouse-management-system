@@ -10,15 +10,15 @@ const Categories = () => {
             .then(data => setCategories(data))
     }, [])
     return (
-        <div>
-            <h2>Categories</h2>
-           <div className='categories-section'>
-           {
-                categories.map(category => <Category key={category.id}
-                    category={category}
-                ></Category>)
-            }
-           </div>
+        <div >
+            <h2 className=' text-start ms-5 ps-5' style={{ color: '#05595B' }}>Categories</h2>
+            <div className='categories-section'>
+                {
+                    categories.map(category => <Category key={category.id}
+                        category={category}
+                    ></Category>)
+                }
+            </div>
         </div>
     );
 };

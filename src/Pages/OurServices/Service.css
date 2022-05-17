@@ -1,0 +1,14 @@
+.service-card {
+    /* border: 1px solid rgb(214, 223, 228); */
+    border: 1px solid #055a5b72;
+    width: 350px;
+    height: 250px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.service-card img {
+    width: 100px;
+    height: 100px;
+
+}

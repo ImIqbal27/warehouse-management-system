@@ -1,0 +1,4 @@
+.customer-all-reviews {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

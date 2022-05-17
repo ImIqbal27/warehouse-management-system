@@ -11,11 +11,12 @@ const Products = () => {
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, [])
+    //  #05595B
     const [products] = useProducts();
 
     return (
         <div >
-            <h2>Products</h2>
+            <h2 className=' text-start ms-5 ps-5' style={{ color: '#05595B' }}>Products</h2>
 
             <div className='products-container'>
                 {
@@ -23,11 +24,7 @@ const Products = () => {
                         product={product}
                     ></Product>)
                 }
-                {/* {
-                    products.slice(0, 4).map(product => <Product key={product._id}
-                        product={product}
-                    ></Product>)
-                } */}
+
             </div>
         </div>
     );

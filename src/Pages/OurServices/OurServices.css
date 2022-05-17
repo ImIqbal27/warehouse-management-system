@@ -1,0 +1,13 @@
+.our-services {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 250px;
+    margin-left: 250px;
+
+}
+
+.our-services-full {
+    background-image: linear-gradient(#b3e8e964, #0fd9dc64);
+
+}
